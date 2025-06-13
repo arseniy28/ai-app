@@ -1,13 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./LoginForm.module.css";
+import { Link } from "react-router-dom"
 
 export default function LoginForm() {
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // чтобы форма не перезагружала страницу
-    navigate("/chat");  // переход на страницу чата
+    e.preventDefault(); 
+    navigate("/chat");  
   };
 
   return (
@@ -35,8 +36,11 @@ export default function LoginForm() {
       </button>
 
       <p className={styles.register}>
-        У вас нет аккаунта? <span className={styles.link}>Регистрация</span>
-      </p>
+  У вас нет аккаунта?{" "}
+  <Link to="/register" className={styles.link}>
+    Регистрация
+  </Link>
+</p>
     </form>
   );
 }

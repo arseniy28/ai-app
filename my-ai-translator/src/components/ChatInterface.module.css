@@ -1,9 +1,13 @@
 .container {
   display: flex;
   height: 100vh;
-  background: linear-gradient(to bottom right, #0b0e1c, #0f1330);
+  background-image: url("../assets/Login.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
 }
+
 
 .sidebar {
   width: 240px;

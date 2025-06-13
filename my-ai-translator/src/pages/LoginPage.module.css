@@ -1,49 +1,48 @@
 .page {
-  display: flex;
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #0f1a43, #1a2759);
-  color: white;
-}
-
-.left {
-  flex: 1;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
+  background: linear-gradient(to bottom right, #0F1A43, #000000);
 }
 
-.right {
-  flex: 1;
+
+.bgLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+
+.bgRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 700px;
+  z-index: 1;
+}
+
+
+.header {
+  position: absolute;
+  top: 20px;
+  right: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
+  gap: 32px;
+  font-size: 14px;
+  z-index: 3;
+  color: white;
 }
 
-.textBlock {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 40px;
-}
 
-.textBlock h1 {
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.textBlock p {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-.imageWrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.imageWrapper img {
-  max-width: 500px;
-  height: auto;
+.left {
+  z-index: 2;
+  max-width: 420px;
+  width: 100%;
 }

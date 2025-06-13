@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
 import styles from "./ChatInterface.module.css";
+
 import attachIcon from "../assets/attachment_icon_259173 1.png";
+import chatIcon from "../assets/chat_bubble_conversation_contact_icon_264230 1.png";
 
 export default function ChatInterface() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [chatHistory, setChatHistory] = useState<string[]>([]);
+  const chatCounter = useRef(1);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const sendMessage = (e: React.FormEvent) => {
@@ -45,6 +49,13 @@ export default function ChatInterface() {
     }
   };
 
+  // Создание нового чата
+  const handleNewChat = () => {
+    const newChat = `Чат ${chatCounter.current}`;
+    setChatHistory((prev) => [newChat, ...prev]);
+    chatCounter.current += 1;
+  };
+
   return (
     <div
       className={styles.container}
@@ -54,15 +65,28 @@ export default function ChatInterface() {
     >
       {/* Drop-зона визуально */}
       {isDragging && (
-        <div className={styles.dropOverlay}>
-          Отпустите файл здесь
-        </div>
+        <div className={styles.dropOverlay}>Отпустите файл здесь</div>
       )}
 
       {/* Sidebar */}
       <div className={styles.sidebar}>
-        <h2 className={styles.logo}>AI Translator</h2>
+        <div className={styles.sidebarHeader}>
+          <h2 className={styles.logo}>AI Translator</h2>
+          <button className={styles.newChatBtn} onClick={handleNewChat}>
+            <img src={chatIcon} alt="Новый чат" />
+          </button>
+        </div>
+
         <input className={styles.search} placeholder="Поиск" />
+
+        {/* История чатов */}
+        <div className={styles.chatList}>
+          {chatHistory.map((chat, index) => (
+            <div key={index} className={styles.chatItem}>
+              {chat}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Main Area */}

@@ -125,4 +125,42 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.newChatBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.newChatBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+.chatList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+.chatItem {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chatItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
 

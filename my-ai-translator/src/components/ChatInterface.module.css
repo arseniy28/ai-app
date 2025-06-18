@@ -163,4 +163,162 @@
 .chatItem:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+.chatList {
+  margin-top: 1rem;
+}
+
+.chatItem {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.chatItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.activeChat {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.noChat {
+  color: gray;
+  text-align: center;
+  margin-top: 2rem;
+}
+.chatList {
+  margin-top: 1rem;
+}
+
+.chatItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.chatItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.activeChat {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.chatActions {
+  display: flex;
+  gap: 4px;
+}
+
+.chatActions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.chatEditInput {
+  width: 100%;
+  background: #0F1A43;
+  border: 1px solid white;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+.fileMessage {
+  display: flex;
+  align-items: center;
+  background-color: #2b2b2b;
+  color: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  position: relative;
+  max-width: 300px;
+}
+
+.fileIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #ff5f96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileInfo strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.fileInfo span {
+  color: #aaa;
+  font-size: 12px;
+}
+.filePreview {
+  display: flex;
+  align-items: center;
+  background-color: #2b2b2b;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+  border: 1px solid #444;
+  max-width: 320px;
+}
+
+.filePreview .fileIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #ff5b8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.filePreview .fileInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.filePreview .fileInfo strong {
+  color: #fff;
+}
+
+.filePreview .fileInfo span {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.filePreview button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
 

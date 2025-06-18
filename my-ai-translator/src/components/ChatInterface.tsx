@@ -2,7 +2,9 @@ import React, { useState, useRef } from "react";
 import styles from "./ChatInterface.module.css";
 import attachIcon from "../assets/attachment_icon_259173 1.png";
 import chatIcon from "../assets/chat_bubble_conversation_contact_icon_264230 1.png";
-import { FaUserCircle } from "react-icons/fa";
+import avatarImage from "../assets/contacts_profile_account_connection_icon_124666 1.png";
+import UserMenu from "../components/UserMenu";
+import { useNavigate } from "react-router-dom";
 
 type Chat = {
   id: string;
@@ -23,7 +25,11 @@ export default function ChatInterface() {
   const [selectedChatId, setSelectedChatId] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
+  const [showMenu, setShowMenu] = useState(false);
+  const [requestCount, setRequestCount] = useState(0);
+
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const navigate = useNavigate();
 
   const currentChat = chats.find((chat) => chat.id === selectedChatId);
 
@@ -88,6 +94,7 @@ export default function ChatInterface() {
 
     setMessage("");
     setAttachedFile(null);
+    setRequestCount((prev) => prev + 1);
   };
 
   const handleNewChat = () => {
@@ -139,6 +146,7 @@ export default function ChatInterface() {
     >
       {isDragging && <div className={styles.dropOverlay}>Отпустите файл здесь</div>}
 
+      {/* Sidebar */}
       <div className={styles.sidebar}>
         <div className={styles.sidebarHeader}>
           <h2 className={styles.logo}>AI Translator</h2>
@@ -153,9 +161,7 @@ export default function ChatInterface() {
           {chats.map((chat) => (
             <div
               key={chat.id}
-              className={`${styles.chatItem} ${
-                chat.id === selectedChatId ? styles.activeChat : ""
-              }`}
+              className={`${styles.chatItem} ${chat.id === selectedChatId ? styles.activeChat : ""}`}
             >
               {chat.isEditing ? (
                 <input
@@ -181,12 +187,29 @@ export default function ChatInterface() {
         </div>
       </div>
 
+      {/* Main content */}
       <div className={styles.main}>
         <div className={styles.navbar}>
           <span>Связаться с нами</span>
           <span>Помощь</span>
           <span>Поддержка клиентов</span>
-          <FaUserCircle className={styles.avatar} size={32} />
+          <div className={styles.avatarWrapper}>
+            <img
+              src={avatarImage}
+              alt="Профиль"
+              className={styles.avatar}
+              onClick={() => setShowMenu(!showMenu)}
+            />
+            {showMenu && (
+              <UserMenu
+                onLogout={() => {
+                  setShowMenu(false);
+                  navigate("/");
+                }}
+                requestCount={requestCount}
+              />
+            )}
+          </div>
         </div>
 
         <div className={styles.chatBox}>

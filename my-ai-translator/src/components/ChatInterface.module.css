@@ -403,7 +403,7 @@
 .modelDropdown {
   position: absolute;
   bottom: 58px; /* над полем */
-  left: 300px;
+  left: 85%;
   z-index: 999;
   background-color: transparent;
   border-radius: 6px;

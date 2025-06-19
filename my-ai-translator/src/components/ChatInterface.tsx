@@ -175,13 +175,12 @@ export default function ChatInterface() {
         </div>
       )}
 
-      <div className={styles.modelSelectWrapper}>
-        <label>Модель перевода:</label>
-        <select value={model} onChange={(e) => setModel(e.target.value)}>
-          <option value="model">TranslatorPro</option>
-          <option value="google">Google Translate</option>
-        </select>
-      </div>
+<div className={styles.modelDropdown}>
+  <select value={model} onChange={(e) => setModel(e.target.value)}>
+    <option value="model">TranslatorPro</option>
+    <option value="google">Google Translate</option>
+  </select>
+</div>
 
       <div className={styles.sidebar}>
         <div className={styles.sidebarHeader}>

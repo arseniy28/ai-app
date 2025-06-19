@@ -320,5 +320,85 @@
   cursor: pointer;
   margin-left: 8px;
 }
+.progressBarWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+}
+
+.progressBar {
+  height: 6px;
+  background-color: #00ff95;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 14px;
+  padding: 4px;
+}
+.modelSelectWrapper {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  z-index: 100;
+  font-size: 14px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.progressBarWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #222;
+  z-index: 2000;
+}
+
+.progressBar {
+  height: 6px;
+  background-color: #00ff99;
+  transition: width 0.4s ease;
+}
+
+.progressText {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  font-size: 12px;
+  color: #fff;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.downloadMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.downloadLink {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.openNowBtn {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 

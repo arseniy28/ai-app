@@ -31,4 +31,38 @@
   .logoutBtn:hover {
     background: #2e3b80;
   }
+  .menu {
+    background-color: #0e1a2b;
+    padding: 16px;
+    border-radius: 10px;
+    color: white;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+  
+  .username {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .counter {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  
+  .logoutBtn {
+    background-color: #1c2b4a;
+    color: white;
+    border: none;
+    padding: 8px 0;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .logoutBtn:hover {
+    background-color: #274060;
+  }
   
